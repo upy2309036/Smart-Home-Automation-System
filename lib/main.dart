@@ -9,6 +9,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Placeholder();
+    return MaterialApp(
+      title: 'Smart Home Automation System',
+      theme: ThemeData.from(
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.cyan,
+        ),
+        useMaterial3: true,
+      ),
+      home: Scaffold()
+    );
   }
 }
