@@ -17,7 +17,26 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: Scaffold()
+      home: Scaffold(
+        appBar: AppBar(
+          leading: IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.menu),
+          ),
+          title: Text('IoT Controller'),
+          actions: [
+            IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.bluetooth),
+            ),
+            IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.more_vert),
+            ),
+          ],
+        ),
+        body: Placeholder(),
+      )
     );
   }
 }
