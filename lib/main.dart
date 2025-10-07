@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smart_home_automation_system/pages/HomePage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,26 +18,7 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: Scaffold(
-        appBar: AppBar(
-          leading: IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.menu),
-          ),
-          title: Text('IoT Controller'),
-          actions: [
-            IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.bluetooth),
-            ),
-            IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.more_vert),
-            ),
-          ],
-        ),
-        body: Placeholder(),
-      )
+      home: const HomePage(),
     );
   }
 }
