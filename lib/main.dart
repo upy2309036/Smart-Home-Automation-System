@@ -42,6 +42,7 @@ class _BluetoothConnectionScreenState extends State<BluetoothConnectionScreen> {
   bool _isScanning = false;
   bool _isConnected = false;
   String _statusMessage = 'Not connected';
+  bool _isLedOn = false;
   
   @override
   void initState() {
@@ -174,6 +175,7 @@ class _BluetoothConnectionScreenState extends State<BluetoothConnectionScreen> {
       _connectedDevice = null;
       _isConnected = false;
       _statusMessage = 'Disconnected';
+      _isLedOn = false;
     });
   }
 
@@ -389,6 +391,24 @@ class _BluetoothConnectionScreenState extends State<BluetoothConnectionScreen> {
                           horizontal: 32,
                           vertical: 16,
                         ),
+                      ),
+                    ),
+                    const SizedBox(height: 16),
+                    ElevatedButton.icon(
+                      onPressed: () {
+                        if (_isLedOn) {
+                          _sendCommand('LED_OFF');
+                        } else {
+                          _sendCommand('LED_ON');
+                        }
+                        setState(() {
+                          _isLedOn = !_isLedOn;
+                        });
+                      },
+                      icon: Icon(_isLedOn ? Icons.lightbulb : Icons.lightbulb_outline),
+                      label: Text(_isLedOn ? 'Turn OFF LED' : 'Turn ON LED'),
+                      style: ElevatedButton.styleFrom(
+                        padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
                       ),
                     ),
                     const SizedBox(height: 32),
