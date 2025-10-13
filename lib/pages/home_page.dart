@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bluetooth_serial/flutter_bluetooth_serial.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+
+  List<BluetoothDevice> devices = [];
+
+  HomePage({
+    super.key
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +39,21 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
-      body: Placeholder(),
+      body: ListView(
+        children: devices.map((device) {
+          return ListTile(
+            leading: Icon(Icons.bluetooth, size: 50),
+            title: Text(device.name ?? 'Unknown'),
+            subtitle: Text(device.address),
+            trailing: ElevatedButton(
+              onPressed: () {
+                // TODO: Implement connect logic
+              },
+              child: Text('Connect'),
+            ),
+          );
+        }).toList(),
+      ),
     );
   }
 }

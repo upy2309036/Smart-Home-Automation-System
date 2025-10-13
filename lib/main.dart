@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:smart_home_automation_system/pages/HomePage.dart';
+import 'package:smart_home_automation_system/pages/home_page.dart';
+import 'package:flutter_bluetooth_serial/flutter_bluetooth_serial.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const HomePage(),
+      home: HomePage(),
     );
   }
 }
